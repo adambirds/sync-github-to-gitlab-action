@@ -1,0 +1,24 @@
+name: "Sync GitHub to GitLab Action"
+description: "A Github Action which will sync a GitHub repository to GitLab as a mirror."
+inputs:
+  destination-repository:
+    description: "Gitlab Repository URL to sync to in SSH format."
+    required: true
+  destination-ssh-key:
+    description: "SSH Private key to use to connect to remote repository."
+    required: true
+  destination-branch-name:
+    description: "Destination branch name to sync to."
+    required: false
+    default: "main"
+
+runs:
+  using: "composite"
+  steps:
+    - run: git remote add mirror ${{ inputs.destination-repository }}
+      shell: bash
+    - run: echo "${{ inputs.destination-ssh-key }}" >> ~/.ssh/id_rsa
+      shell: bash
+    - run: git push -u mirror ${{ inputs.destination-branch-name 
+      shell: bash
+
