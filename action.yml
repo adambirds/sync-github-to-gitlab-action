@@ -19,6 +19,6 @@ runs:
       shell: bash
     - run: echo "${{ inputs.destination-ssh-key }}" >> ~/.ssh/id_rsa
       shell: bash
-    - run: git push -u mirror ${{ inputs.destination-branch-name 
+    - run: git push -u mirror ${{ inputs.destination-branch-name }}
       shell: bash
 
