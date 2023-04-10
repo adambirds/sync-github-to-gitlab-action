@@ -9,22 +9,22 @@ steps:
     - uses: actions/checkout@v2
     - uses: adambirds/sync-github-to-gitlab@v1.0.0
       with:
-        destination-repository: git@gitlab.com:adambirds/sync-github-to-gitlab.git
-        destination-branch: main
-        destination-ssh-key: ${{ secrets.GITLAB_SSH_KEY }}
+        destination_repository: git@gitlab.com:adambirds/sync-github-to-gitlab.git
+        destination_branch_name: main
+        destination_ssh_key: ${{ secrets.GITLAB_SSH_KEY }}
 ```
 
 ## Inputs
 
-### `destination-repository`
+### `destination_repository`
 
 **Required** The SSH URL of the GitLab repository to sync to.
 
-### `destination-branch`
+### `destination_branch_name`
 
 **Not Required** The branch of the GitLab repository to sync to. Defaults to `main`.
 
-### `destination-ssh-key`
+### `destination_ssh_key`
 
 **Required** The SSH key to use to authenticate with the GitLab repository.
 
