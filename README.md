@@ -7,7 +7,7 @@ This GitHub action syncs a GitHub repository to a GitLab repository as a mirror.
 ```yaml
 steps:
     - uses: actions/checkout@v2
-    - uses: adambirds/sync-github-to-gitlab@v1.0.0
+    - uses: adambirds/sync-github-to-gitlab@v1.1.0
       with:
         destination_repository: git@gitlab.com:adambirds/sync-github-to-gitlab.git
         destination_branch_name: main
